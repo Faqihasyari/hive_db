@@ -23,7 +23,9 @@ class AddNoteView extends GetView<AddNoteController> {
                 border: OutlineInputBorder(),
               ),
             ),
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             TextField(
               controller: controller.descC,
               decoration: InputDecoration(
@@ -31,13 +33,20 @@ class AddNoteView extends GetView<AddNoteController> {
                 border: OutlineInputBorder(),
               ),
             ),
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             Obx(
-              () => ElevatedButton(onPressed: () {
-                if(controller.isLoading.isFalse){
-                  controller.addNote();
-                }
-              }, child: Text(controller.isLoading.isFalse ?"ADD NOTE" : "LOADING....")),
+              () => ElevatedButton(
+                  onPressed: () {
+                    if (controller.isLoading.isFalse) {
+                      controller.addNote();
+                      Get.back();
+                    }
+                  },
+                  child: Text(controller.isLoading.isFalse
+                      ? "ADD NOTE"
+                      : "LOADING....")),
             )
           ],
         ));

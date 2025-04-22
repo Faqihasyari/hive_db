@@ -21,13 +21,7 @@ class AddNoteController extends GetxController {
       note.id = id;
       await note.save();
 
-      //EDIT NOTE => DENGAN ID YANG KITA DAPAT
-      print("ID : $id");
-      print("BERHASIL MENAMBAHKAN DATA KE BOX (LOCA STORAGE DENGAN HIVE)");
-
-      print(box.get(id)?.id);
-      print(box.get(id)?.title);
-      print(box.get(id)?.desc);
+    
     }
   }
 }
