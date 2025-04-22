@@ -34,7 +34,9 @@ class AddNoteView extends GetView<AddNoteController> {
             SizedBox(height: 20,),
             Obx(
               () => ElevatedButton(onPressed: () {
-                if(controller.isLoading.isFalse){}
+                if(controller.isLoading.isFalse){
+                  controller.addNote();
+                }
               }, child: Text(controller.isLoading.isFalse ?"ADD NOTE" : "LOADING....")),
             )
           ],

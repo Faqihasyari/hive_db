@@ -15,5 +15,6 @@ class AddNoteController extends GetxController {
 
       final box = NoteManager.getAllNotes();
       int id = await box.add(note);
+      print("ID : $id");
   }
 }
