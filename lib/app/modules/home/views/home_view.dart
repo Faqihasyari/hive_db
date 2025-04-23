@@ -20,6 +20,11 @@ class HomeView extends GetView<HomeController> {
           valueListenable: NoteManager.getAllNotes().listenable(),
           builder: (context, box, _) {
             List<Notes> allNotes = box.values.toList().cast<Notes>();
+            if (allNotes.length == 0) {
+              return Center(
+                child: Text("Tidak ada data"),
+              );
+            }
             return ListView.builder(
               itemCount: allNotes.length,
               itemBuilder: (context, index) {
@@ -34,8 +39,11 @@ class HomeView extends GetView<HomeController> {
                   ),
                   title: Text(" ${note.title}"),
                   subtitle: Text(" ${note.desc}"),
-                  trailing:
-                      IconButton(onPressed: () {}, icon: Icon(Icons.delete)),
+                  trailing: IconButton(
+                      onPressed: () {
+                        note.delete();
+                      },
+                      icon: Icon(Icons.delete)),
                 );
               },
             );
