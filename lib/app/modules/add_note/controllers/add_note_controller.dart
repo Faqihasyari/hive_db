@@ -7,7 +7,7 @@ class AddNoteController extends GetxController {
   TextEditingController titleC = TextEditingController();
   TextEditingController descC = TextEditingController();
 
-  void addNote() async {
+  Future<void> addNote() async {
     if (titleC.text.isNotEmpty && descC.text.isNotEmpty) {
       //Membuat Tanpa ID
       Notes note = Notes()

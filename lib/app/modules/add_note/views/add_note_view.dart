@@ -38,9 +38,9 @@ class AddNoteView extends GetView<AddNoteController> {
             ),
             Obx(
               () => ElevatedButton(
-                  onPressed: () {
+                  onPressed: () async {
                     if (controller.isLoading.isFalse) {
-                      controller.addNote();
+                      await controller.addNote();
                       Get.back();
                     }
                   },
