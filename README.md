@@ -2,6 +2,7 @@
 ### test hive
 
 ### first time try hive database
+### coba db
 ### learn hive_db
 
 A new Flutter project.
