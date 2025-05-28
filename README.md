@@ -2,6 +2,7 @@
 ### test hive
 
 ### first time try hive database
+### cihuyy
 ### coba db
 ### learn hive_db
 
